@@ -5,7 +5,7 @@ on:
     branches: main
 
 jobs:
-  greetings_job
+  greetings_job:
     runs-on: ubuntu-20.04
     steps:
       - name: Greetings the traveller
