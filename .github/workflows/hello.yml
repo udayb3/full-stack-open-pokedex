@@ -11,3 +11,9 @@ jobs:
       - name: Greetings the traveller
         run: |
           echo "Greetings Traveller"
+      - name: know all
+        run: |
+          timedatectl
+      - name: know itself
+        run: |
+          ls -l
