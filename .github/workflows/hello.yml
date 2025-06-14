@@ -1,0 +1,13 @@
+name: Greetings Traveller
+
+on:
+  push:
+    branches: main
+
+jobs:
+  greetings_job
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Greetings the traveller
+        run: |
+          echo "Greetings Traveller"
