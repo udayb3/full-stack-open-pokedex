@@ -16,7 +16,8 @@ module.exports = {
     'ecmaVersion': 2018,
     'sourceType': 'module'
   },
-  'plugins': [
+  settings: { react: { version: '18.2' } },
+  plugins: [
     'react', 'jest'
   ],
   'rules': {
