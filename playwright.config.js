@@ -1,7 +1,8 @@
 import { defineConfig, devices } from '@playwright/test'
+import path from 'path'
 
 export default defineConfig({
-  testDir: './tests',
+  testDir: path.join(__dirname, '..'),
   fullyParallel: true,
   reporter: 'html',
   testIgnore: '*.jest.*',
