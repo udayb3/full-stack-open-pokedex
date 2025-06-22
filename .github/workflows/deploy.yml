@@ -1,15 +1,31 @@
-name: Triggering Render Deployment
+name: Triggering Deployment
 on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
   workflow_run:
     workflows: ["Testing"]
     branches: [main]
     types: 
       - completed
+  
+
 jobs:
-  main:
-    name: Deploy to Render
+  deployment_pipeline:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
     steps:
       - name: Trigger deployment
         run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID_BH  }}?key=${{ secrets.RENDER_API_KEY_BH }}
+  tag_release:
+    needs: [deployment_pipeline]
+    runs-on: ubuntu-latest
+    steps:
+      - name: version
+        uses: anothrNick/github-tag-action@1.64.0
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
