@@ -10,7 +10,7 @@ app.get('/version', (req, res) => {
 })
 
 app.get('/healthTraveller', (req, res) => {
-  res.send('ok, let\'s check it again')
+  res.send('ok, chaning it a bit')
 })
 
 app.listen(PORT, () => {
