@@ -26,8 +26,8 @@ jobs:
     steps:
       - name: Install Git in container
         run: |
-          apk update
-          apk add git
+          apt update
+          apt add git
           # one time fix to avoid permission problems later on
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: version
