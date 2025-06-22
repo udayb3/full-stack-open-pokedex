@@ -1,6 +1,6 @@
 name: Triggering Render Deployment
 on:
-  workflow-run:
+  workflow_run:
     workflows: ["Testing"]
     branches: [main]
     types: 
