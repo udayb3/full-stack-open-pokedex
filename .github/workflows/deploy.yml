@@ -1,0 +1,18 @@
+name: Triggering Render Deployment
+on:
+  workflow-run:
+    workflows: ["Testing"]
+    branches: [main]
+    types: 
+      - completed
+jobs:
+  main:
+    name: Deploy to Render
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deployment
+        uses: sws2apps/render-deployment@main
+        with:
+          serviceId: ${{ secrets.RENDER_SERV_ID_BH }}
+          apiKey: ${{ secrets.RENDER_API_KEY_BH }}
+          multipleDeployment: false

@@ -2,4 +2,4 @@
 
 echo "Running the Build script............."
 
-npm install
+npm run build
