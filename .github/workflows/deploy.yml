@@ -11,8 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger deployment
-        uses: sws2apps/render-deployment@main
-        with:
-          serviceId: ${{ secrets.RENDER_SERV_ID_BH }}
-          apiKey: ${{ secrets.RENDER_API_KEY_BH }}
-          multipleDeployment: false
+        run: https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID_BH  }}?key=${{ secrets.RENDER_API_KEY }}
