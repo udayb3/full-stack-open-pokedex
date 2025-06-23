@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: version
-        uses: anothrNick/github-tag-action@c360518fb8131e99795f8208f8a6105ceca55ec2
+        uses: anothrNick/github-tag-action@v1.64.0
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
