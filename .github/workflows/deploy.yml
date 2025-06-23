@@ -1,16 +1,17 @@
 name: Triggering Deployment
 on:
+  workflow_run:
+    workflows: ["Testing"]
+    branches: [main]
+    types: 
+      - completed
   push:
     branches:
       - main
   pull_request:
     branches: [main]
     types: [opened, synchronize]
-  workflow_run:
-    workflows: ["Testing"]
-    branches: [main]
-    types: 
-      - completed
+  
   
 
 jobs:
