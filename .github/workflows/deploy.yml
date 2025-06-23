@@ -25,6 +25,10 @@ jobs:
     needs: [deployment_pipeline]
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: '0' 
       - name: version
         uses: anothrNick/github-tag-action@1.64.0
         env: 
