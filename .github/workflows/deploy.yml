@@ -24,12 +24,6 @@ jobs:
     needs: [deployment_pipeline]
     runs-on: ubuntu-latest
     steps:
-      - name: Install Git in container
-        run: |
-          apt update
-          apt add git
-          # one time fix to avoid permission problems later on
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: version
         uses: anothrNick/github-tag-action@c360518fb8131e99795f8208f8a6105ceca55ec2
         env: 
